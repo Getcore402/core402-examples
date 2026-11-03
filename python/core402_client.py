@@ -1,13 +1,16 @@
 import os
 import requests
+from dotenv import load_dotenv
 
-# Configuration de base de l'API Core402
-API_GATEWAY_URL = "https://api.core402.dev/v1/scrape"
+load_dotenv()
+
+API_GATEWAY_URL = os.getenv("API_GATEWAY_URL", "http://localhost:3000/v1/scrape")
 API_KEY = os.getenv("CORE402_API_KEY", "your_api_key_here")
 
 def fetch_protected_data(target_url):
+    # Utilisation de x-api-key comme attendu par l'API Gateway
     headers = {
-        "Authorization": f"Bearer {API_KEY}",
+        "x-api-key": API_KEY,
         "Content-Type": "application/json"
     }
     payload = {
