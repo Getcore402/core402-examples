@@ -1,0 +1,24 @@
+{
+  "name": "Core402 - Automated M2M Scraping",
+  "modules": [
+    {
+      "name": "HTTP Make a Request",
+      "type": "http:ActionGetData",
+      "parameters": {
+        "url": "https://api.core402.dev/v1/scrape",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer YOUR_CORE402_API_KEY"
+          },
+          {
+            "name": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": "{\n  \"url\": \"https://example.com\"\n}"
+      }
+    }
+  ]
+}
