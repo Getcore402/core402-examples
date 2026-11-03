@@ -1,0 +1,9 @@
+# Environnement virtuel Python
+venv/
+
+# Fichiers de configuration sensible et secrets
+.env
+
+# Fichiers temporaires Python
+__pycache__/
+*.pyc
